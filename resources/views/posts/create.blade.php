@@ -2,23 +2,40 @@
 
 @section('content')
 <div class="container">
-<form>
+<form action="/p" method="post" enctype="multipart/form-data">
   <div class="row">
-    <div class="col-8 offset-2">
-    <h1>Add New Post</h1>
-  </div>
-  <div class="row">
-  <div class="form-group">
-    <label for="caption">Post Caption</label>
-    <input type="text" class="form-control" id="caption" placeholder="Enter Post Caption">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Add</button>
-    </div>
+      @csrf
+      <div class="col-8 offset-2">
+          <div class="row">
+              <h1>Add New Post</h1>
+          </div>
+
+          <div class="form-group row">
+              <label for="caption" class="col-md-4 col-form-label">Caption</label>
+              <input id="caption" name="caption" type="text" class="form-control @error('caption') is-invalid @enderror" caption="caption" value="{{ old('caption') }}" autocomplete="caption" autofocus>
+
+              @error('caption')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+          </div>
+
+          <div class="row">
+              <label for="image" class="col-md-4 col-form-label">Image</label>
+              <input type="file" class="form-control-file" id="image" name="image">
+
+              @error('image')
+{{--              <span class="invalid-feedback" role="alert">--}}
+                  <strong class="alert-danger">{{ $message }}</strong>
+{{--              </span>--}}
+              @enderror
+          </div>
+
+          <div class="row mt-5">
+              <button type="submit" class="btn btn-block btn-primary">Create</button>
+          </div>
+      </div>
   </div>
 </form>
 </div>

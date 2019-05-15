@@ -6,10 +6,10 @@
       <div class="col-3 p-5">
         <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class="img-fluid rounded-circle">
       </div>
-      <div class="col-9 pt-5 pl-5">
+      <div class="col-9 pt-5 mt-4">
         <div class="d-flex justify-content-between align-items-baseline">
           <h1>{{ $user->username }}</h1>
-          <a href="#" class="btn btn-link">Add New Post</a>
+          <a href="/p/create" class="btn btn-link">Add New Post</a>
         </div>
         <div class="d-flex">
           <div class="pr-4"><strong>153</strong> posts</div>
@@ -27,15 +27,11 @@
     </div>
 
     <div class="row pt-5 d-flex">
+      @foreach($user->posts as $post)
       <div class="col-4">
-        <img src="/img/motor.png" class="img-fluid img-thumbnail">
+        <img src="/storage/{{ $post->image }}" class="w-100 img-thumbnail">
       </div>
-      <div class="col-4">
-        <img src="/img/motor.png" class="img-fluid img-thumbnail">
-      </div>
-      <div class="col-4">
-        <img src="/img/motor.png" class="img-fluid img-thumbnail">
-      </div>
+      @endforeach
     </div>
 </div>
 @endsection
