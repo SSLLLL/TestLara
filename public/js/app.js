@@ -49437,8 +49437,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\SHL\Desktop\proj\Laravel\freeCodeGram\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\SHL\Desktop\proj\Laravel\freeCodeGram\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\S84128724\Desktop\freeCodeGram\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\S84128724\Desktop\freeCodeGram\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

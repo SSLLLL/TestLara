@@ -17,21 +17,23 @@
           <div class="pr-4"><strong>212</strong> following</div>
         </div>
         <div class="pt-3 font-weight-bold">
-          {{ $user->profile->title }}
+          {{ $user->profile->title ?? "" }}
         </div>
         <div>
-            {{ $user->profile->description }}
+            {{ $user->profile->description ?? "" }}
         </div>
-        <div><a href="#">{{$user->profile->url}}</a></div>
+        <div><a href="#">{{$user->profile->url ?? ""}}</a></div>
       </div>
     </div>
 
     <div class="row pt-5 d-flex">
+      @if($user->posts)
       @foreach($user->posts as $post)
       <div class="col-4">
         <img src="/storage/{{ $post->image }}" class="w-100 img-thumbnail">
       </div>
       @endforeach
+      @endif
     </div>
 </div>
 @endsection
